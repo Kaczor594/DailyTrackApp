@@ -1,0 +1,17 @@
+{
+  "name": "dailytrack-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create dailytrack-sync",
+    "db:migrate": "wrangler d1 execute dailytrack-sync --file=schema.sql",
+    "db:migrate:remote": "wrangler d1 execute dailytrack-sync --remote --file=schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0",
+    "@cloudflare/workers-types": "^4.20241205.0",
+    "typescript": "^5.7.0"
+  }
+}
